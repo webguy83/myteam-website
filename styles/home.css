@@ -1,0 +1,91 @@
+@import './styles.css';
+
+.content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.main-heading {
+  font-size: 10rem;
+  font-weight: 700;
+  line-height: 10rem;
+}
+
+.talent {
+  color: var(--light-coral);
+}
+
+.desc {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  font-weight: 600;
+  max-width: 45rem;
+}
+
+.desc::before {
+  content: '';
+  display: block;
+  width: 5rem;
+  height: 0.4rem;
+  background-color: var(--rapture-blue);
+  margin-bottom: 8rem;
+}
+
+.pattern-home-1 {
+  position: absolute;
+  top: 0;
+  left: -27rem;
+}
+
+.pattern-home-2 {
+  display: block;
+  margin-left: auto;
+  width: 100%;
+  max-width: 35.8rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .desc {
+    font-size: 1.5rem;
+  }
+
+  .pattern-home-2 {
+    margin: 0 auto;
+  }
+
+  .desc::before {
+    display: none;
+  }
+
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .main-heading {
+    font-size: 6.4rem;
+    line-height: inherit;
+  }
+
+  .pattern-home-1 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .main-heading {
+    font-size: 4rem;
+  }
+
+  .desc {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+}
