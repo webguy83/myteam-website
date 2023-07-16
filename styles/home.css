@@ -1,5 +1,9 @@
 @import './styles.css';
 
+.container {
+  height: 100%;
+}
+
 .content {
   position: relative;
   display: flex;
