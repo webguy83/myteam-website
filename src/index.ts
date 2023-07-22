@@ -5,7 +5,6 @@ const menuList = document.querySelector('.menu')! as HTMLDivElement;
 
 hamburgerBtn.addEventListener('click', toggleMenu, false);
 closeBtn.addEventListener('click', toggleMenu, false);
-// menuBackdrop.addEventListener('click', toggleMenu, true);
 
 function toggleMenu() {
   if (menuBackdrop.classList.contains('showMenu')) {

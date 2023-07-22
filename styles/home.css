@@ -1,9 +1,5 @@
 @import './styles.css';
 
-.container {
-  height: 100%;
-}
-
 .content {
   position: relative;
   display: flex;
@@ -49,6 +45,45 @@
   margin-left: auto;
   width: 100%;
   max-width: 35.8rem;
+}
+
+.teams-info {
+  display: flex;
+  align-items: center;
+  gap: 12.5rem;
+  min-height: 100vh;
+}
+
+.main-content-container {
+  background-color: var(--sacramento-state-green);
+  min-height: 100vh;
+}
+
+.heading-2 {
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 4.8rem;
+}
+
+.teams-data > figure {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.3rem;
+  margin-bottom: 3.2rem;
+}
+
+.teams-data h3 {
+  font-size: 1.8rem;
+  color: var(--light-coral);
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+.teams-data p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  opacity: 0.8;
 }
 
 @media only screen and (max-width: 1000px) {
