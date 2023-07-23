@@ -26,12 +26,20 @@
 }
 
 .desc::before {
+  background-color: var(--rapture-blue);
+}
+
+.desc::before,
+.heading-2::before {
   content: '';
   display: block;
   width: 5rem;
   height: 0.4rem;
-  background-color: var(--rapture-blue);
   margin-bottom: 8rem;
+}
+
+.heading-2::before {
+  background-color: var(--light-coral);
 }
 
 .pattern-home-1 {
@@ -48,15 +56,17 @@
 }
 
 .teams-info {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 12.5rem;
   min-height: 100vh;
+  padding: 4rem 16.5rem;
 }
 
 .main-content-container {
   background-color: var(--sacramento-state-green);
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .heading-2 {
@@ -86,6 +96,35 @@
   opacity: 0.8;
 }
 
+.pattern-home-3 {
+  position: absolute;
+  right: -10rem;
+  bottom: 0;
+}
+
+.teams-group {
+  display: flex;
+  gap: 4.5rem;
+}
+
+@media only screen and (max-width: 1180px) {
+  .pattern-home-3 {
+    top: 0;
+  }
+
+  .teams-group {
+    flex-direction: column;
+  }
+
+  .heading-2 {
+    font-size: 3.2rem;
+  }
+
+  .heading-2::before {
+    margin-bottom: 3.2rem;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .desc {
     font-size: 1.5rem;
@@ -111,6 +150,31 @@
 
   .pattern-home-1 {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .teams-info {
+    padding: 4rem 9.5rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .heading-2 {
+    max-width: 23rem;
+  }
+  .teams-info {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    justify-content: center;
+  }
+
+  .teams-data > figure {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    max-width: 40rem;
+    margin: 4rem auto;
   }
 }
 
