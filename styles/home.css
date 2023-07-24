@@ -30,7 +30,7 @@
 }
 
 .desc::before,
-.heading-2::before {
+.teams-group .heading-2::before {
   content: '';
   display: block;
   width: 5rem;
@@ -38,7 +38,7 @@
   margin-bottom: 8rem;
 }
 
-.heading-2::before {
+.teams-group .heading-2::before {
   background-color: var(--light-coral);
 }
 
@@ -107,6 +107,94 @@
   gap: 4.5rem;
 }
 
+.quotes {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quotes > img:first-child {
+  align-self: flex-start;
+}
+
+.quotes > img:last-child {
+  align-self: flex-end;
+}
+
+.quotes-group {
+  display: grid;
+  grid-template-areas: 'header header header' 'figure1 figure2 figure3';
+  grid-gap: 3rem;
+  grid-row-gap: 9.2rem;
+  max-width: 111rem;
+  text-align: center;
+  margin: 0 9.7rem;
+}
+
+.quotes-group .heading-2 {
+  grid-area: header;
+}
+
+.quotes-group figcaption {
+  position: relative;
+}
+
+.icon-quote {
+  position: absolute;
+  z-index: 0;
+  top: -3.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.figure1 {
+  grid-area: figure1;
+}
+
+.figure2 {
+  grid-area: figure2;
+}
+
+.figure3 {
+  grid-area: figure3;
+}
+
+.success-stories {
+  color: var(--rapture-blue);
+}
+
+.quote {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.heading-3 {
+  color: var(--rapture-blue);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.8rem;
+  margin-top: 2.4rem;
+}
+
+.job-position {
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.8rem;
+}
+
+.quotes-group figure > img {
+  border-radius: 50%;
+  border: 0.2rem solid #c4fffe;
+  margin-top: 3.2rem;
+}
+
 @media only screen and (max-width: 1180px) {
   .pattern-home-3 {
     top: 0;
@@ -120,7 +208,7 @@
     font-size: 3.2rem;
   }
 
-  .heading-2::before {
+  .teams-group .heading-2::before {
     margin-bottom: 3.2rem;
   }
 }
@@ -160,7 +248,7 @@
 }
 
 @media only screen and (max-width: 640px) {
-  .heading-2 {
+  .teams-group .heading-2 {
     max-width: 23rem;
   }
   .teams-info {
