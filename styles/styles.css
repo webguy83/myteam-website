@@ -29,7 +29,6 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 5rem;
-  font-size: 1.8rem;
   margin-top: 5rem;
 }
 
@@ -37,6 +36,7 @@ body {
   color: var(--white);
   text-decoration: none;
   transition: all 0.3s;
+  font-size: 1.8rem;
 }
 
 .link:hover {
@@ -185,6 +185,68 @@ body {
   z-index: 0;
 }
 
+.footer-container {
+  background-color: var(--dark-green);
+  padding: 4.8rem 0;
+}
+
+.footer-content {
+  max-width: 111rem;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-socials ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.nav-links ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links,
+.nav-socials {
+  padding-bottom: 0.5rem;
+}
+
+.nav-group .nav-socials {
+  display: none;
+}
+
+.address,
+.copyright {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  opacity: 0.6;
+}
+
+.address {
+  margin-right: auto;
+  margin-left: 12.5rem;
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-block > .address {
+  display: none;
+}
+
 @media only screen and (max-width: 1300px) {
   .pattern-contact-us {
     bottom: -1.5rem;
@@ -195,6 +257,47 @@ body {
   .header {
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .nav-group .nav-socials {
+    display: block;
+  }
+
+  .contact-block {
+    text-align: right;
+    gap: 3.4rem;
+  }
+
+  .contact-block .nav-socials {
+    display: none;
+  }
+
+  .nav-group .logo {
+    height: 2.4rem;
+    align-self: flex-start;
+  }
+
+  .nav-group .nav-links {
+    margin-top: auto;
+    margin-bottom: 3.2rem;
+  }
+
+  .nav-links ul {
+    gap: 2.4rem;
+  }
+
+  .nav-socials ul {
+    justify-content: flex-start;
+  }
+
+  .footer-content > .address {
+    display: none;
+  }
+
+  .contact-block > .address {
+    display: block;
   }
 }
 
@@ -209,6 +312,49 @@ body {
     text-align: center;
     line-height: 3.5rem;
     margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  .footer-content > .address {
+    display: block;
+    margin: 0;
+    text-align: center;
+  }
+
+  .contact-block > .address {
+    display: none;
+  }
+
+  .nav-group {
+    gap: 2.4rem;
+  }
+
+  .nav-group .nav-socials {
+    display: none;
+  }
+
+  .nav-group .nav-links {
+    margin-bottom: auto;
+  }
+
+  .contact-block {
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  .contact-block .nav-socials {
+    display: block;
+  }
+
+  .nav-group .logo {
+    align-self: center;
   }
 }
 
