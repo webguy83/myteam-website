@@ -18,7 +18,8 @@ body {
 
 .header-container,
 .teams-info,
-.quotes-container {
+.quotes-container,
+.contact-us-content {
   max-width: 144rem;
   margin: 0 auto;
 }
@@ -43,20 +44,37 @@ body {
   transition: all 0.3s;
 }
 
-.contact-us {
+.nav-bar .contact-us {
   margin-left: auto;
+}
+
+.contact-us {
   text-decoration: none;
   color: var(--white);
   border: 2px solid var(--white);
   border-radius: 2.4rem;
   padding: 0.5em 1.5em;
   transition: all 0.3s;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
 }
 
 .contact-us:hover {
   background-color: var(--white);
   color: var(--midnight-green);
   transition: all 0.3s;
+}
+
+.contact-us-content .contact-us {
+  color: var(--sacramento-state-green);
+  border: 2px solid var(--sacramento-state-green);
+  position: relative;
+  z-index: 1;
+}
+
+.contact-us-content .contact-us:hover {
+  background-color: var(--sacramento-state-green);
+  color: var(--white);
 }
 
 .header {
@@ -147,10 +165,50 @@ body {
   max-width: 100%;
 }
 
+.contact-us-container {
+  background-color: var(--light-coral);
+  color: var(--sacramento-state-green);
+  overflow: hidden;
+}
+
+.contact-us-content {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  padding: 7.6rem 0;
+}
+
+.pattern-contact-us {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+@media only screen and (max-width: 1300px) {
+  .pattern-contact-us {
+    bottom: -1.5rem;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .header {
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .contact-us-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-us-content .heading-2 {
+    max-width: 30rem;
+    text-align: center;
+    line-height: 3.5rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -162,6 +220,10 @@ body {
   .nav-bar {
     padding-left: 2.4rem;
     padding-right: 2.4rem;
+  }
+
+  .pattern-contact-us {
+    bottom: -2.5rem;
   }
 }
 
