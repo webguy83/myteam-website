@@ -1,0 +1,88 @@
+@import './styles.css';
+
+.header {
+  min-height: initial;
+}
+.header-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 10rem;
+  margin-bottom: 12rem;
+  margin-right: 12rem;
+}
+
+.main-heading {
+  font-size: 6.4rem;
+  font-weight: 700;
+  line-height: 10rem;
+}
+
+.desc {
+  position: relative;
+  z-index: 1;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  font-weight: 600;
+}
+
+.desc::before {
+  background-color: var(--light-coral);
+}
+
+.desc::before {
+  content: '';
+  display: block;
+  width: 5rem;
+  height: 0.4rem;
+  margin-bottom: 4rem;
+}
+
+.pattern-home-2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+    max-width: 50rem;
+    margin: 0 auto 12rem;
+  }
+  .desc {
+    font-size: 1.5rem;
+  }
+  .desc::before {
+    display: none;
+  }
+  .pattern-home-2 {
+    position: absolute;
+    right: -10rem;
+    bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .main-heading {
+    font-size: 4rem;
+    line-height: normal;
+    margin-bottom: 1rem;
+  }
+
+  .pattern-home-2 {
+    bottom: -10rem;
+  }
+
+  .content {
+    padding: 0 2.4rem;
+  }
+}
