@@ -45,9 +45,14 @@
 
 .pattern-home-2 {
   position: absolute;
-  right: 0;
+  right: -10rem;
   bottom: 0;
   z-index: 0;
+}
+
+.main-content-container {
+  background-color: var(--deep-jungle-green);
+  min-height: 100vh;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -63,11 +68,6 @@
   }
   .desc::before {
     display: none;
-  }
-  .pattern-home-2 {
-    position: absolute;
-    right: -10rem;
-    bottom: 0;
   }
 }
 

@@ -44,8 +44,9 @@
 
 .pattern-home-1 {
   position: absolute;
-  top: 0;
-  left: -27rem;
+  top: 50%;
+  left: -10rem;
+  transform: translateY(-50%);
 }
 
 .pattern-home-2 {
@@ -64,6 +65,7 @@
 }
 
 .main-content-container {
+  position: relative;
   background-color: var(--sacramento-state-green);
   min-height: 100vh;
   overflow: hidden;
@@ -101,12 +103,19 @@
   gap: 4.5rem;
 }
 
+.quotes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 .quotes {
   min-height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -189,6 +198,16 @@
   margin-top: 3.2rem;
 }
 
+.pattern-home-5 {
+  align-self: flex-end;
+}
+
+@media only screen and (max-width: 1200px) {
+  .pattern-home-1 {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 1180px) {
   .pattern-home-3 {
     top: 0;
@@ -224,10 +243,6 @@
   .main-heading {
     font-size: 6.4rem;
     line-height: inherit;
-  }
-
-  .pattern-home-1 {
-    display: none;
   }
 }
 

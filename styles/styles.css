@@ -16,9 +16,9 @@ body {
   color: var(--white);
 }
 
-.header-container,
+.header,
 .teams-info,
-.quotes-container,
+.quotes,
 .contact-us-content {
   max-width: 144rem;
   margin: 0 auto;
@@ -172,6 +172,7 @@ body {
 }
 
 .contact-us-container {
+  position: relative;
   background-color: var(--light-coral);
   color: var(--sacramento-state-green);
   overflow: hidden;
