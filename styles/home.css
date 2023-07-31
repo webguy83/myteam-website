@@ -177,21 +177,6 @@
   z-index: 1;
 }
 
-.heading-3 {
-  color: var(--rapture-blue);
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 2.8rem;
-  margin-top: 2.4rem;
-}
-
-.job-position {
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: 500;
-  line-height: 1.8rem;
-}
-
 .quotes-group figure > img {
   border-radius: 50%;
   border: 0.2rem solid #c4fffe;

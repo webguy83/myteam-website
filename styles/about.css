@@ -13,8 +13,7 @@
   display: flex;
   justify-content: space-between;
   gap: 10rem;
-  margin-bottom: 12rem;
-  margin-right: 12rem;
+  margin: 12rem 0;
 }
 
 .main-heading {
@@ -51,8 +50,74 @@
 }
 
 .main-content-container {
+  position: relative;
   background-color: var(--deep-jungle-green);
+  overflow: hidden;
+}
+
+.bg-pattern-2 {
+  position: absolute;
+  top: 0;
+  left: -10rem;
+}
+
+.directors-info {
+  position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10rem 2.4rem 14rem;
+}
+
+.directors-info .heading-2 {
+  margin-bottom: 6.4rem;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  row-gap: 7.6rem;
+  column-gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 35rem));
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  background-color: var(--sacramento-state-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.2rem 2.4rem 5.6rem;
+}
+
+.card button {
+  position: absolute;
+  bottom: -2.8rem;
+  cursor: pointer;
+  width: 5.6rem;
+  height: 5.6rem;
+  background-color: var(--light-coral);
+  border: none;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.card button:hover {
+  transition: all 0.3s;
+  background-color: var(--rapture-blue);
+}
+
+.card figure img {
+  border: 0.2rem solid #c4fffe;
+  border-radius: 50%;
+}
+
+.bg-pattern-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -61,13 +126,19 @@
     text-align: center;
     gap: 0;
     max-width: 50rem;
-    margin: 0 auto 12rem;
+    margin: 8rem auto 12rem;
   }
   .desc {
     font-size: 1.5rem;
   }
   .desc::before {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  .directors-info > .heading-2 {
+    font-size: 4.8rem;
   }
 }
 
@@ -84,5 +155,15 @@
 
   .content {
     padding: 0 2.4rem;
+  }
+
+  .directors-info > .heading-2 {
+    font-size: 3.2rem;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .bg-pattern-2 {
+    top: -10rem;
   }
 }
