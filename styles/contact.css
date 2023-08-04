@@ -59,6 +59,7 @@
   line-height: 2.2rem;
   cursor: pointer;
   font-weight: 600;
+  margin-top: 1rem;
 }
 
 .submit-btn:hover {
@@ -87,7 +88,7 @@
   padding-left: 1.5rem;
   font-size: inherit;
   font-weight: inherit;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .input.message {
@@ -102,12 +103,20 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
-.input-error {
+.input.error::placeholder {
+  color: var(--light-coral);
+  opacity: 0.6;
+}
+
+.input.error {
+  border-bottom: 1px solid var(--light-coral);
+}
+
+.input-error-txt {
   color: var(--light-coral);
   font-size: 1rem;
   font-style: italic;
   font-weight: 700;
-  visibility: hidden;
   padding-left: 1.5rem;
 }
 
