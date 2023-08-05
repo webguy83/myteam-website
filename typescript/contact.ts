@@ -7,6 +7,7 @@ const companyInputElm = document.getElementById('company') as HTMLInputElement;
 const companyErrorElm = companyInputElm.nextElementSibling as HTMLParagraphElement;
 const titleInputElm = document.getElementById('title') as HTMLInputElement;
 const titleErrorElm = titleInputElm.nextElementSibling as HTMLParagraphElement;
+const messageInputElm = document.getElementById('message') as HTMLTextAreaElement;
 
 const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -52,6 +53,13 @@ form.addEventListener('submit', (event) => {
   }
 
   if (isNameValid && isEmailValid && isEmailValidFormat && isCompanyValid && isTitleValid) {
-    alert(`Thank you ${nameInputElm.value} for your submission.`);
+    const confirmed = confirm(`Thank you ${nameInputElm.value} for your submission.`);
+    if (confirmed) {
+      nameInputElm.value = '';
+      emailInputElm.value = '';
+      companyInputElm.value = '';
+      titleInputElm.value = '';
+      messageInputElm.value = '';
+    }
   }
 });

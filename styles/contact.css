@@ -9,16 +9,35 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .main-content-container {
-  margin: 3rem 0;
+  position: relative;
+  padding: 3rem 12.7rem;
 }
 
 .main-heading {
   font-size: 6.4rem;
   font-weight: 700;
   line-height: 10rem;
+}
+
+.content-area {
+  flex-basis: 100rem;
+}
+
+.contact-pattern-2 {
+  position: absolute;
+  right: -10rem;
+  bottom: 0;
+  z-index: 0;
+}
+
+.bg-pattern-2 {
+  position: absolute;
+  top: 5rem;
+  left: -10rem;
 }
 
 .desc {
@@ -33,6 +52,7 @@
   align-items: center;
   gap: 2rem;
   margin: 1rem 0px;
+  text-align: left;
 }
 
 .question-text {
@@ -41,6 +61,8 @@
 }
 
 .combined-blocks {
+  position: relative;
+  z-index: 1;
   display: flex;
   max-width: 111rem;
   margin: 0 auto;
@@ -62,16 +84,8 @@
   margin-top: 1rem;
 }
 
-.submit-btn:hover {
-  background-color: var(--rapture-blue);
-}
-
-.form,
-.content-area {
-  width: 50%;
-}
-
 .form {
+  width: 100%;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -120,6 +134,11 @@
   padding-left: 1.5rem;
 }
 
+.footer-container {
+  position: relative;
+  z-index: 1;
+}
+
 .visually-hidden {
   border: 0;
   padding: 0;
@@ -132,4 +151,44 @@
   clip: rect(1px, 1px, 1px, 1px); /*maybe deprecated but we need to support legacy browsers */
   clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
   white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}
+
+@media only screen and (max-width: 1200px) {
+  .combined-blocks {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .content-area {
+    text-align: center;
+    flex-basis: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-content-container {
+    padding: 6rem 2.6rem 9rem;
+  }
+
+  .main-heading {
+    font-size: 4rem;
+  }
+
+  .bg-pattern-2 {
+    display: none;
+  }
+
+  .contact-pattern-2 {
+    bottom: -10rem;
+  }
+
+  .desc {
+    margin: 0 0 5rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .submit-btn:hover {
+    background-color: var(--rapture-blue);
+  }
 }

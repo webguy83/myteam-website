@@ -96,9 +96,12 @@
   position: absolute;
   right: -10rem;
   bottom: 0;
+  z-index: 0;
 }
 
 .teams-group {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 4.5rem;
 }

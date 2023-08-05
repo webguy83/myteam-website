@@ -109,6 +109,11 @@ html {
   font-size: 62.5%;
 }
 
+input,
+textarea {
+  box-sizing: border-box;
+}
+
 body,
 html {
   height: 100%;

@@ -7,6 +7,7 @@ var companyInputElm = document.getElementById('company');
 var companyErrorElm = companyInputElm.nextElementSibling;
 var titleInputElm = document.getElementById('title');
 var titleErrorElm = titleInputElm.nextElementSibling;
+var messageInputElm = document.getElementById('message');
 var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -52,6 +53,13 @@ form.addEventListener('submit', function (event) {
         titleErrorElm.textContent = 'This field is required';
     }
     if (isNameValid && isEmailValid && isEmailValidFormat && isCompanyValid && isTitleValid) {
-        alert("Thank you ".concat(nameInputElm.value, " for your submission."));
+        var confirmed = confirm("Thank you ".concat(nameInputElm.value, " for your submission."));
+        if (confirmed) {
+            nameInputElm.value = '';
+            emailInputElm.value = '';
+            companyInputElm.value = '';
+            titleInputElm.value = '';
+            messageInputElm.value = '';
+        }
     }
 });
