@@ -4,18 +4,16 @@ var nameErrorElm = nameInputElm.nextElementSibling;
 var emailInputElm = document.getElementById('email');
 var emailErrorElm = emailInputElm.nextElementSibling;
 var companyInputElm = document.getElementById('company');
-var companyErrorElm = companyInputElm.nextElementSibling;
 var titleInputElm = document.getElementById('title');
-var titleErrorElm = titleInputElm.nextElementSibling;
 var messageInputElm = document.getElementById('message');
+var messageErrorElm = messageInputElm.nextElementSibling;
 var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 form.addEventListener('submit', function (event) {
     event.preventDefault();
     var isNameValid = nameInputElm.value.length;
     var isEmailValid = emailInputElm.value.length;
     var isEmailValidFormat = emailRegExp.test(emailInputElm.value);
-    var isCompanyValid = companyInputElm.value.length;
-    var isTitleValid = companyInputElm.value.length;
+    var isMessageValid = messageInputElm.value.length;
     if (isNameValid) {
         nameInputElm.classList.remove('error');
         nameErrorElm.textContent = '';
@@ -36,23 +34,15 @@ form.addEventListener('submit', function (event) {
         emailInputElm.classList.add('error');
         emailErrorElm.textContent = 'Please use a valid email address';
     }
-    if (isCompanyValid) {
-        companyInputElm.classList.remove('error');
-        companyErrorElm.textContent = '';
+    if (isMessageValid) {
+        messageInputElm.classList.remove('error');
+        messageErrorElm.textContent = '';
     }
     else {
-        companyInputElm.classList.add('error');
-        companyErrorElm.textContent = 'This field is required';
+        messageInputElm.classList.add('error');
+        messageErrorElm.textContent = 'This field is required';
     }
-    if (isTitleValid) {
-        titleInputElm.classList.remove('error');
-        titleErrorElm.textContent = '';
-    }
-    else {
-        titleInputElm.classList.add('error');
-        titleErrorElm.textContent = 'This field is required';
-    }
-    if (isNameValid && isEmailValid && isEmailValidFormat && isCompanyValid && isTitleValid) {
+    if (isNameValid && isEmailValid && isEmailValidFormat && isMessageValid) {
         var confirmed = confirm("Thank you ".concat(nameInputElm.value, " for your submission."));
         if (confirmed) {
             nameInputElm.value = '';

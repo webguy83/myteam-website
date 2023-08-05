@@ -4,10 +4,9 @@ const nameErrorElm = nameInputElm.nextElementSibling as HTMLParagraphElement;
 const emailInputElm = document.getElementById('email') as HTMLInputElement;
 const emailErrorElm = emailInputElm.nextElementSibling as HTMLParagraphElement;
 const companyInputElm = document.getElementById('company') as HTMLInputElement;
-const companyErrorElm = companyInputElm.nextElementSibling as HTMLParagraphElement;
 const titleInputElm = document.getElementById('title') as HTMLInputElement;
-const titleErrorElm = titleInputElm.nextElementSibling as HTMLParagraphElement;
 const messageInputElm = document.getElementById('message') as HTMLTextAreaElement;
+const messageErrorElm = messageInputElm.nextElementSibling as HTMLParagraphElement;
 
 const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -17,8 +16,7 @@ form.addEventListener('submit', (event) => {
   const isNameValid = nameInputElm.value.length;
   const isEmailValid = emailInputElm.value.length;
   const isEmailValidFormat = emailRegExp.test(emailInputElm.value);
-  const isCompanyValid = companyInputElm.value.length;
-  const isTitleValid = companyInputElm.value.length;
+  const isMessageValid = messageInputElm.value.length;
 
   if (isNameValid) {
     nameInputElm.classList.remove('error');
@@ -37,22 +35,15 @@ form.addEventListener('submit', (event) => {
     emailInputElm.classList.add('error');
     emailErrorElm.textContent = 'Please use a valid email address';
   }
-  if (isCompanyValid) {
-    companyInputElm.classList.remove('error');
-    companyErrorElm.textContent = '';
+  if (isMessageValid) {
+    messageInputElm.classList.remove('error');
+    messageErrorElm.textContent = '';
   } else {
-    companyInputElm.classList.add('error');
-    companyErrorElm.textContent = 'This field is required';
-  }
-  if (isTitleValid) {
-    titleInputElm.classList.remove('error');
-    titleErrorElm.textContent = '';
-  } else {
-    titleInputElm.classList.add('error');
-    titleErrorElm.textContent = 'This field is required';
+    messageInputElm.classList.add('error');
+    messageErrorElm.textContent = 'This field is required';
   }
 
-  if (isNameValid && isEmailValid && isEmailValidFormat && isCompanyValid && isTitleValid) {
+  if (isNameValid && isEmailValid && isEmailValidFormat && isMessageValid) {
     const confirmed = confirm(`Thank you ${nameInputElm.value} for your submission.`);
     if (confirmed) {
       nameInputElm.value = '';
