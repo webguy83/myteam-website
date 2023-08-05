@@ -2,7 +2,11 @@ const hamburgerBtn = document.querySelector('.hamburger')! as HTMLButtonElement;
 const closeBtn = document.querySelector('.closeBtn')! as HTMLButtonElement;
 const menuBackdrop = document.querySelector('.menu-backdrop')! as HTMLDivElement;
 const menuList = document.querySelector('.menu')! as HTMLDivElement;
+const copyrightYear = document.querySelector('.year')! as HTMLSpanElement;
 const cardBtns = document.getElementsByClassName('card-btn');
+
+const getCurrentYear = new Date().getFullYear();
+copyrightYear.innerHTML = getCurrentYear.toString();
 
 for (const cardBtn of Array.from(cardBtns)) {
   cardBtn.addEventListener('click', onCardBtnClick, true);
