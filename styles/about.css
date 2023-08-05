@@ -115,17 +115,8 @@
   background-color: var(--rapture-blue);
 }
 
-.card button.opened:hover {
-  background-color: var(--light-coral);
-}
-
 .card figcaption {
   text-align: center;
-}
-
-.card button:hover {
-  transition: all 0.3s;
-  background-color: var(--rapture-blue);
 }
 
 .card figure img {
@@ -333,5 +324,16 @@
   .card-front,
   .back-card {
     padding: 3.2rem 1.8rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card button:hover {
+    transition: all 0.3s;
+    background-color: var(--rapture-blue);
+  }
+
+  .card button.opened:hover {
+    background-color: var(--light-coral);
   }
 }
