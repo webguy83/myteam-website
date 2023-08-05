@@ -10,14 +10,27 @@ const messageErrorElm = messageInputElm.nextElementSibling as HTMLParagraphEleme
 
 const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
+let formSubmitted = false;
 
+function validate(evt: Event) {
+  if (formSubmitted) {
+    const elm = evt.target as HTMLInputElement | HTMLTextAreaElement;
+    switch (elm.name) {
+      case 'name':
+        checkIsNameValid();
+        break;
+      case 'email':
+        checkIsEmailValid();
+        break;
+      case 'message':
+        checkIsMessageValid();
+        break;
+    }
+  }
+}
+
+function checkIsNameValid() {
   const isNameValid = nameInputElm.value.length;
-  const isEmailValid = emailInputElm.value.length;
-  const isEmailValidFormat = emailRegExp.test(emailInputElm.value);
-  const isMessageValid = messageInputElm.value.length;
-
   if (isNameValid) {
     nameInputElm.classList.remove('error');
     nameErrorElm.textContent = '';
@@ -25,6 +38,11 @@ form.addEventListener('submit', (event) => {
     nameInputElm.classList.add('error');
     nameErrorElm.textContent = 'This field is required';
   }
+}
+
+function checkIsEmailValid() {
+  const isEmailValid = emailInputElm.value.length;
+  const isEmailValidFormat = emailRegExp.test(emailInputElm.value);
   if (isEmailValid && isEmailValidFormat) {
     emailInputElm.classList.remove('error');
     emailErrorElm.textContent = '';
@@ -35,6 +53,10 @@ form.addEventListener('submit', (event) => {
     emailInputElm.classList.add('error');
     emailErrorElm.textContent = 'Please use a valid email address';
   }
+}
+
+function checkIsMessageValid() {
+  const isMessageValid = messageInputElm.value.length;
   if (isMessageValid) {
     messageInputElm.classList.remove('error');
     messageErrorElm.textContent = '';
@@ -42,6 +64,24 @@ form.addEventListener('submit', (event) => {
     messageInputElm.classList.add('error');
     messageErrorElm.textContent = 'This field is required';
   }
+}
+
+nameInputElm.addEventListener('input', validate);
+emailInputElm.addEventListener('input', validate);
+messageInputElm.addEventListener('input', validate);
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  formSubmitted = true;
+
+  checkIsNameValid();
+  checkIsEmailValid();
+  checkIsMessageValid();
+
+  const isNameValid = nameInputElm.value.length;
+  const isEmailValid = emailInputElm.value.length;
+  const isEmailValidFormat = emailRegExp.test(emailInputElm.value);
+  const isMessageValid = messageInputElm.value.length;
 
   if (isNameValid && isEmailValid && isEmailValidFormat && isMessageValid) {
     const confirmed = confirm(`Thank you ${nameInputElm.value} for your submission.`);
@@ -51,6 +91,7 @@ form.addEventListener('submit', (event) => {
       companyInputElm.value = '';
       titleInputElm.value = '';
       messageInputElm.value = '';
+      formSubmitted = false;
     }
   }
 });
