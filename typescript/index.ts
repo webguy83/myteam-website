@@ -28,10 +28,10 @@ function onCardBtnClick(e: Event) {
   if (btn.classList.contains('opened')) {
     cardInnerElm.style.transform = 'none';
     btn.classList.remove('opened');
-    imgElm.src = '../assets/icon-cross.svg';
+    imgElm.src = 'assets/icon-cross.svg';
   } else {
     cardInnerElm.style.transform = 'rotateY(180deg)';
     btn.classList.add('opened');
-    imgElm.src = '../assets/icon-close.svg';
+    imgElm.src = 'assets/icon-close.svg';
   }
 }
